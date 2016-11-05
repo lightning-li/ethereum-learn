@@ -279,4 +279,17 @@ a / b := (a * b ** 9) % 11
 
 ---
 
-由上述运行代码看出，我们可以附加 3 个块，分别为 "=>?p"、"123t"、"567x"，现在我们可以有 3-of-6 的协议，即得到上传的 6 块中的任意 3 块，我们都可以恢复出原内容，比如我们得到了块
+由上述运行代码看出，我们可以附加 3 个块，分别为 "=>?p"、"123t"、"567x"，现在我们可以有 3-of-6 的协议，即得到上传的 6 块中的任意 3 块，我们都可以恢复出原内容，比如我们得到了块 1 "abcd"、块 4 "=>?p"、块 5 "123t"：
+
+```
+> P1 = share.lagrange_interp(map(share.Galois,map(ord, ["a", "=", "1"])), map(share.Galois, [1,4,5]))
+[109, 253, 241]
+> P2 = share.lagrange_interp(map(share.Galois,map(ord, ["b", ">", "2"])), map(share.Galois, [1,4,5]))
+[110, 253, 241]
+...
+> map(lambda x : share.eval_poly_at(map(share.Galois,P1),share.Galois(x)), range(1, 4))
+[97, 101, 105]  -> ["a", "e", "i"]
+...
+```
+
+由上述代码就可以复原出原来的文件内容为 "abcdefghijkl"。
