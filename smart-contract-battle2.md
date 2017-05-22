@@ -191,6 +191,23 @@ true
   value: 0
 }
 ```
+交易收据各字段的意思是：
+```
+Returns
+
+Object - A transaction receipt object, or null when no receipt was found:
+
+blockHash: String, 32 Bytes - hash of the block where this transaction was in.
+blockNumber: Number - block number where this transaction was in.
+transactionHash: String, 32 Bytes - hash of the transaction.
+transactionIndex: Number - integer of the transactions index position in the block.
+from: String, 20 Bytes - address of the sender.
+to: String, 20 Bytes - address of the receiver. null when its a contract creation transaction.
+cumulativeGasUsed: Number - The total amount of gas used when this transaction was executed in the block.
+gasUsed: Number - The amount of gas used by this specific transaction alone.
+contractAddress: String - 20 Bytes - The contract address created, if the transaction was a contract creation, otherwise null.
+logs: Array - Array of log objects, which this transaction generated.
+```
 上面获取到的交易收据中有 logs 与 logsBloom 两项，其中 logs 中有 topics，topics 最多有 3 个元素，第一个元素是合约事件函数的 keccak256 哈希值，即
 ```
 > web3.sha3("valueChanged(address,uint256,uint256)")
