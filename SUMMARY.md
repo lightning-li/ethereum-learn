@@ -6,3 +6,4 @@
 * [智能合约实战(一)](smart-contract-battle1.md)
 * [智能合约实战(二)](smart-contract-battle2.md)
 * [智能合约实战(三)](smart-contract-battle3.md)
+* [Golem 多方签名钱包解析](golem-multisig-wallet.md)
