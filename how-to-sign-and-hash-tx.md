@@ -70,7 +70,9 @@ In [33]: utils.privtoaddr(private_key).encode("hex")
 Out[33]: '8b75db8a458f25a728dcbc237c10e89cea11d176'
 ```
 
-**Note:** 在 web3.js 提供的 personal.sign 以及 eth.sign API 中，会对将要进行签名的数据 msg 进行变化：keccak256("\x19Ethereum Signed Message:\n" + len(msg) + msg)，见 https://github.com/ethereum/EIPs/issues/191
+**Note1:** 在 web3.js 提供的 personal.sign 以及 eth.sign API 中，会对将要进行签名的数据 msg 进行变化：keccak256("\x19Ethereum Signed Message:\n" + len(msg) + msg)，见 https://github.com/ethereum/EIPs/issues/191
+
+**Note2:** 也可使用 web3.js 库中的 eth.sendTransaction API，具体程序见 https://github.com/lightning-li/blockchain-knife/blob/master/ethereum_tx_hash.js
 
 ----
 
