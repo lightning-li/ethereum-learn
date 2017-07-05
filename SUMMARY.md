@@ -8,3 +8,6 @@
 * [智能合约实战(三)](smart-contract-battle3.md)
 * [Golem 多方签名钱包解析](golem-multisig-wallet.md)
 * [交易签名以及哈希值的计算](how-to-sign-and-hash-tx.md)
+* [智能合约最佳实践](smart-contract-best-practices.md)
+* [solidity 学习笔记](solidity-learn-note.md)
+* [智能合约中的动态数组](solidity-dynamic-array.md)
