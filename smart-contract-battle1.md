@@ -34,6 +34,8 @@
 
 至此，一个私链网络搭建完成~
 
+具体详见 https://media.consensys.net/how-to-build-a-private-ethereum-blockchain-fbf3904f337
+
 ##### 2. geth 常用命令
 
 可以通过 `IPC`、`RPC`、`Console` 三种形式与 `geth` 进行交互，其中 `IPC` 与 `RPC` 使用 JSON-RPC 协议，JSON-RPC 是一种无状态、轻量级的远程过程调用协议，它对传输协议透明，可以在同一个进程里使用，也可以通过 socket 或者 HTTP 或者其它各种各样的消息传递环境，它使用 JSON ([RFC 4627](http://www.ietf.org/rfc/rfc4627.txt)) 作为数据格式。如：
