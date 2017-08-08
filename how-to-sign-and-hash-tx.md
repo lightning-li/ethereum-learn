@@ -62,8 +62,9 @@ In [23]: tx.sender.encode("hex")
 Out[23]: '8b75db8a458f25a728dcbc237c10e89cea11d176'
 
 // privtopub 是从 bitcoin 中库导入的函数，得出的公钥是未压缩的，前缀是 04，后面跟着两个 256 bit，分别代表公钥的 x 坐标与 y 坐标，如附图所示
-In [31]: utils.sha3(utils.privtopub(private_key.decode("hex"))[1:])[12:].encode("hex")
-Out[31]: '8b75db8a458f25a728dcbc237c10e89cea11d176'
+In [31]: x, y = utils.privtopub(private_key.decode("hex"))
+In [32]: utils.sha3(utils.encode_int32(x) + utils.encode_int32(y))[12:].encode("hex")
+Out[32]: '8b75db8a458f25a728dcbc237c10e89cea11d176'
 
 // privtoaddr 中使用到了 privtopub 函数
 In [33]: utils.privtoaddr(private_key).encode("hex")
