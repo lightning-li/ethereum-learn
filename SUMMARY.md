@@ -12,4 +12,4 @@
 * [solidity 学习笔记](solidity-learn-note.md)
 * [智能合约中的动态数组](solidity-dynamic-array.md)
 * [EVM 学习](evm-learn.md)
-* [Ethereum State Clearing](ethereum-state-clearing.md)
+* [Ethereum 状态清理](ethereum-state-clearing.md)
