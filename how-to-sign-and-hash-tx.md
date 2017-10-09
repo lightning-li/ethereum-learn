@@ -2,7 +2,7 @@
 
 **参考 [eip155](https://github.com/ethereum/eips/issues/155)**
 
-在以太坊中，tx = [nonce, gasPrice, gas, to, value, data, v, r, s]，其中 eip155 之前，(r, s, v) = sign(rlp.encode(tx[:-3]))，eip155 之后，(r, s, v) = sign(rlp.encode(tx[:-3] + [chainId, 0, 0]))，hash(tx) = keccak256(rlp.encode(tx))；使用 [pyethereum](https://github.com/ethereum/pyethereum) 库计算交易哈希值：
+在以太坊中，tx = [nonce, gasPrice, gas, to, value, data, v, r, s]，其中 eip155 之前，(r, s, v) = sign(sha3(rlp.encode(tx[:-3])))，eip155 之后，(r, s, v) = sign(sha3(rlp.encode(tx[:-3] + [chainId, 0, 0])))，hash(tx) = keccak256(rlp.encode(tx))；使用 [pyethereum](https://github.com/ethereum/pyethereum) 库计算交易哈希值：
 
 ```
 In [1]: import rlp
