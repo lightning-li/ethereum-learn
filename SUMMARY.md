@@ -13,3 +13,4 @@
 * [智能合约中的动态数组](solidity-dynamic-array.md)
 * [EVM 学习](evm-learn.md)
 * [Ethereum 状态清理](ethereum-state-clearing.md)
+* [以太坊核心存储结构分析](ethereum-core-storage.md)
