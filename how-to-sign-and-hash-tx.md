@@ -78,3 +78,5 @@ Out[33]: '8b75db8a458f25a728dcbc237c10e89cea11d176'
 ----
 
 ![比特币未压缩公钥示意图](/images/2017/06/bitcoin_pubkey.png)
+
+![以太坊交易签名变化图](/images/2017/10/eth-sign-tx-hash.png)
