@@ -1,5 +1,7 @@
 #### 智能合约实战(二)
 
+**作者：李康**
+
 ##### 事件（Event）
 
 *关于事件的详细信息请阅读 https://media.consensys.net/technical-introduction-to-events-and-logs-in-ethereum-a074d65dd61e*

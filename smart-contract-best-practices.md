@@ -2,6 +2,8 @@
 
 翻译自 https://github.com/ConsenSys/smart-contract-best-practices
 
+**译者：李康**
+
 ### 使用 solidity 编写智能合约的安全建议
 ---
 #### 外部调用

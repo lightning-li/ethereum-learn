@@ -1,5 +1,7 @@
 #### Golem 多方签名钱包解析
 
+**作者：李康**
+
 **注意：修改了 submitTransactionWithSignatures 函数，由于 web3.eth.sign 行为发生了改变，见 https://github.com/ethereum/EIPs/issues/191**
 ```
 pragma solidity ^0.4.8;

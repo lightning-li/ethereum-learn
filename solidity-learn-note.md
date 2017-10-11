@@ -1,5 +1,7 @@
 ## Solidity 学习笔记
 
+**作者：李康**
+
 #### 1. 可见性
 
 函数可以被定义为 `external`，`public`，`internal` 或者 `private`，默认是 `public`；对于状态变量来说，没有 `external` 类型，默认是 `internal`。
@@ -62,4 +64,4 @@ contract C {
 
 当合约 D CALLCODE 合约 E 的时候，在 E 中调用 `msg.sender`，得到的结果是 D。
 
-当一个合约 C 调用 D，然后 D 再 DELEGATECALL 合约 E，此时在 E 中调用 `msg.sender`，得到的结果是 C，也就是说 E 中有着与 D 中相同的 `msg.sender` 与 `msg.value`。 
+当一个合约 C 调用 D，然后 D 再 DELEGATECALL 合约 E，此时在 E 中调用 `msg.sender`，得到的结果是 C，也就是说 E 中有着与 D 中相同的 `msg.sender` 与 `msg.value`。
