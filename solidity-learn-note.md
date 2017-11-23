@@ -65,3 +65,13 @@ contract C {
 当合约 D CALLCODE 合约 E 的时候，在 E 中调用 `msg.sender`，得到的结果是 D。
 
 当一个合约 C 调用 D，然后 D 再 DELEGATECALL 合约 E，此时在 E 中调用 `msg.sender`，得到的结果是 C，也就是说 E 中有着与 D 中相同的 `msg.sender` 与 `msg.value`。
+
+#### 3. 异常处理
+
+在智能合约中，我们常常会去调用某一个合约的函数，这时候通常有两种方法：
+
+- 使用 call/callcode/delegatecall/send/transfer 底层函数；
+
+- 使用被调用合约的名称以及它的函数名，算是高层次的调用
+
+ 当被调用的合约函数出现异常时，这两种方法在 solidity 编译器处的处理逻辑是不一样的，底层函数的使用，会返回 true 或 false 交由调用合约来处理；高层次的调用会 bubbling up，意思是会导致调用合约抛出异常，进而回滚整个交易的操作，具体见 https://solidity.readthedocs.io/en/latest/control-structures.html?highlight=send#exceptions
