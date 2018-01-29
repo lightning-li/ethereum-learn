@@ -323,3 +323,54 @@ true
 ```
 
 调用完成之后，使用 detect_internal_storage.py 脚本按照上述方法获取该合约账户的 storageRoot，此时 storageRoot 为'V\xe8\x1f\x17\x1b\xccU\xa6\xff\x83E\xe6\x92\xc0\xf8n[H\xe0\x1b\x99l\xad\xc0\x01b/\xb5\xe3c\xb4!'，这是存储为空时对应的根哈希值，如果你留意一下，会发现所有非合约账户的 storageRoot 均一样。
+
+---
+
+cpp-ethereum 搭建：
+
+```
+{
+ "sealEngine": "Ethash",
+ "params": {
+  "accountStartNonce": "0x00",
+  "homsteadForkBlock": "0x118c30",
+  "daoHardforkBlock": "0x1d4c00",
+  "EIP150ForkBlock": "0x259518",
+  "EIP158ForkBlock": "0x28d138",
+  "metropolisForkBlock": "0xffffffffffffffffff",
+  "networkID" : "0x07d0",
+  "chainID": "0x01",
+  "maximumExtraDataSize": "0x20",
+  "tieBreakingGas": false,
+  "minGasLimit": "0x1388",
+  "maxGasLimit": "7fffffffffffffff",
+  "gasLimitBoundDivisor": "0x0400",
+  "minimumDifficulty": "0x020000",
+  "difficultyBoundDivisor": "0x0800",
+  "durationLimit": "0x0d",
+  "blockReward": "0x4563918244F40000"
+ },
+ "genesis": {
+    "nonce": "0x0000000000000042",
+  "difficulty": "0x020000",
+  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "author": "0x0000000000000000000000000000000000000000",
+  "timestamp": "0x00",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "extraData": "0x00",
+  "gasLimit": "0x08000000"
+ },
+  "accounts": {
+  "0000000000000000000000000000000000000001": { "precompiled": { "name": "ecrecover", "linear": { "base": 3000, "word": 0 } } },
+  "0000000000000000000000000000000000000002": { "precompiled": { "name": "sha256", "linear": { "base": 60, "word": 12 } } },
+  "0000000000000000000000000000000000000003": { "precompiled": { "name": "ripemd160", "linear": { "base": 600, "word": 120 } } },
+  "0000000000000000000000000000000000000004": { "precompiled": { "name": "identity", "linear": { "base": 15, "word": 3 } } },
+  "0000000000000000000000000000000000000005": { "precompiled": { "name": "modexp", "startBlock" : "0x2dc6c0" } }
+  "0000000000000000000000000000000000000006": { "precompiled": { "name": "alt_bn128_G1_add", "startBlock" : "0x2dc6c0", "linear": { "base": 500, "word": 0 } } },
+  "0000000000000000000000000000000000000007": { "precompiled": { "name": "alt_bn128_G1_mul", "startBlock" : "0x2dc6c0", "linear": { "base": 2000, "word": 0 } } },
+  "0000000000000000000000000000000000000008": { "precompiled": { "name": "alt_bn128_pairing_product", "startBlock" : "0x2dc6c0" } }
+ }
+}
+```
+
+启动命令：`eth --config cppgenesis.json --no-discovery -j --mining on -v 8 -a 0x8a25ac495ff4366e72e039a9280e0bb990f23760 -C`
